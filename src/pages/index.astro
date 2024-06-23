@@ -1,0 +1,51 @@
+---
+import Footer from "../layouts/Footer.astro"
+import Header from "../layouts/Header.astro"
+import Main from "../layouts/Main.astro"
+
+import "../styles/global.scss"
+---
+
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+		<title>Alimentar+ | Solução de Ponta para Combater a Fome no Brasil</title>
+	</head>
+	<body>
+		<Header />
+
+		<Main />
+
+		<Footer />
+	</body>
+</html>
+
+<script is:inline src="https://kit.fontawesome.com/bba2bd4ff6.js" crossorigin="anonymous"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script is:inline>
+	AOS.init();
+</script>
+<script is:inline>
+	var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+</script>

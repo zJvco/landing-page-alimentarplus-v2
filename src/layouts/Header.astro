@@ -1,0 +1,91 @@
+---
+import "../styles/header.scss"
+---
+
+<header>
+    <a href="/" class="header-logo">
+        <img src="/public/images/alimentarplus_logo_principal.png" alt="logo" width="140" />
+    </a>
+    
+    <nav>
+        <ul class="links-container">
+            <li>
+                <a class="nav-links" href="#intro-section">Início</a>
+            </li>
+            <li>
+                <a class="nav-links" href="#topics-section">Solução</a>
+            </li>
+            <li>
+                <a class="nav-links" href="#plans-section">Planos</a>
+            </li>
+            <li>
+                <a class="nav-links" href="#team-section">Equipe</a>
+            </li>
+            <li>
+                <a class="nav-links" href="#contact-section">Contato</a>
+            </li>
+        </ul>
+
+        <div class="login-area">
+            <a href="https://app.alimentarplus.com.br/cadastro" target="_blank" class="try-free">Experimente Grátis</a>
+            <a href="https://app.alimentarplus.com.br/login" target="_blank" class="login">Login</a>
+        </div>
+    </nav>
+
+    <button class="hamburguer-menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <button class="close-menu">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+</header>
+
+<script>
+    const header = document.querySelector("header");
+    const headerLinks = document.querySelectorAll(".nav-links");
+    const headerLoginText = document.querySelector(".login")
+    
+    let sticky = header.offsetTop;
+    
+    window.onscroll = () => {
+        if (window.pageYOffset > sticky) {
+            console.log("1")
+            header.classList.add("scrolled");
+
+            headerLinks.forEach(item => {
+                item.classList.add("change-color")
+            })
+            
+            headerLoginText.classList.add("change-color")
+        } else {
+            console.log("2")
+
+            header.classList.remove("scrolled");
+            
+            headerLinks.forEach(item => {
+                item.classList.remove("change-color")
+            })
+            
+            headerLoginText.classList.remove("change-color")
+        }
+    }
+
+    const hamburguerMenuButton = document.querySelector(".hamburguer-menu");
+    const closeMenuButton = document.querySelector(".close-menu")
+    const nav = document.querySelector("nav");
+
+    hamburguerMenuButton.addEventListener("click", (e) => {
+        nav.style.display = "block";
+        hamburguerMenuButton.style.display = "none";
+        closeMenuButton.style.display = "block";
+    })
+
+    closeMenuButton.addEventListener("click", (e) => {
+        nav.style.display = "none";
+        hamburguerMenuButton.style.display = "block";
+        closeMenuButton.style.display = "none";
+    })
+
+</script>

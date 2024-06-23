@@ -1,0 +1,144 @@
+@import "./variables.scss";
+
+header {
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 15px 30px;
+    width: 100%;
+    font-size: 0.9rem;
+
+    @media screen and (max-width: $small-screen-breakpoint) {
+        background-color: #FFF;
+    }
+
+    .header-logo {
+        display: flex;
+        align-items: center;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media screen and (max-width: $small-screen-breakpoint) {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #FFF;
+            justify-content: unset;
+            padding: 15px;
+            display: none;
+        }
+        
+        ul {
+            list-style-type: none;
+            display: flex;
+            margin: 0 40px;
+            width: 100%;
+
+            @media screen and (max-width: $small-screen-breakpoint) {
+                flex-direction: column;
+                margin: 0;
+            }
+            
+            li {
+                margin: 0 20px;
+                display: inline-flex;
+
+                @media screen and (max-width: $small-screen-breakpoint) {
+                    margin: 0;
+                }
+                
+                a {
+                    color: #FFFFFF;
+
+                    @media screen and (max-width: $small-screen-breakpoint) {
+                        color: #000000;
+                        padding: 10px;
+                        width: 100%;
+                    }
+                    
+                    &:hover {
+                        color: var(--main-color);
+                    }
+
+                }
+
+                .change-color {
+                    color: #000000;
+                }
+            }
+        }
+    
+        .login-area {
+            display: flex;
+            align-items: center;
+
+            @media screen and (max-width: $small-screen-breakpoint) {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            .try-free {
+                background-color: var(--main-color);
+                padding: 15px;
+                border-radius: 10px;
+                margin-right: 10px;
+                color: #FFFFFF;
+                transition: all 0.2s ease-in-out;
+                text-wrap: nowrap;
+                
+                @media screen and (max-width: $small-screen-breakpoint) {
+                    margin-right: 0;
+                    width: 100%;
+                    margin: 20px 0;
+                }
+                
+                &:hover {
+                    background-color: var(--secondary-color);
+                }
+            }
+
+            .login {
+                color: #FFFFFF;
+
+                @media screen and (max-width: $small-screen-breakpoint) {
+                    width: 100%;
+                    color: #000000;
+                }
+
+                &:hover {
+                    color: var(--main-color);
+                }
+            }
+
+            .change-color {
+                color: #000000;
+            }
+        }
+    }
+
+    .hamburguer-menu, .close-menu {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .close-menu {
+        display: none;
+    }
+}
+
+.scrolled {
+    background-color: #FFFFFF;
+}
